@@ -32,7 +32,8 @@ public abstract class Gadget implements IGadget {
 	    }
 
 	    public void setPrice(long price) {
-	        this.price = price;
+	    	  if (price < 0) throw new IllegalArgumentException("Harga tidak boleh negatif.");
+	    	    this.price = price;
 	    }
 
 	    public abstract void displayInfo();	
